@@ -2,8 +2,29 @@
 import React from "react";
 import { db } from "../firebase";
 import { useFormInput } from "../hooks";
+import styledComponents, { css } from "styled-components";
 
-import buttonStyle from "../assets/css/button.module.css";
+// import buttonStyle from "../assets/css/button.module.css";
+
+// we pass props here because this is a function
+const StyledButton = styledComponents.button`
+  height: 33px;
+  background: ${(props) => (props.primary ? "#4caf50" : "blue")};
+  border: 0;
+  color: #fff;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  // we need to use css if we need to give styles using props
+  ${(props) =>
+    props.primary &&
+    css`
+      border: 1px solid red;
+      color: ${props.textColor};
+    `}
+`;
 
 function CreatePost(props) {
   // const [title, setTitle] = useState("");
@@ -64,7 +85,11 @@ function CreatePost(props) {
           <textarea {...content} />
         </div>
 
-        <button className={buttonStyle.createPostBtn}>Create Post</button>
+        {/* <button className={buttonStyle.createPostBtn}>Create Post</button> */}
+        <StyledButton>Create Post</StyledButton>
+        <StyledButton primary textColor="red">
+          Create Post
+        </StyledButton>
       </form>
     </div>
   );
