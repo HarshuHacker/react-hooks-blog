@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { db } from '../firebase';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "../firebase";
 
 function PostDetail() {
   const [post, setPost] = useState({});
@@ -9,12 +9,11 @@ function PostDetail() {
   const { postId } = useParams();
 
   useEffect(() => {
-    db
-      .collection('posts')
+    db.collection("posts")
       .doc(postId)
       .get()
       .then((snapshot) => {
-        console.log('snapshot', snapshot.data());
+        console.log("snapshot", snapshot.data());
         setPost(snapshot.data());
       });
   }, []);

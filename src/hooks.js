@@ -8,6 +8,7 @@ export function useFormInput(initialValue) {
   }
 
   return {
-      value, onChange: handleChange
-  }
+    value,
+    onChange: handleChange,
+  };
 }

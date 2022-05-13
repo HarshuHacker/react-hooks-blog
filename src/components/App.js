@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 
-import { CreatePost, Home, Navbar, PostDetail } from "./index"
+import { CreatePost, Home, Navbar, PostDetail } from "./index";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import React from "react";
-import { db } from "../firebase"
-import {useFormInput} from "../hooks"
+import { db } from "../firebase";
+import { useFormInput } from "../hooks";
 
 function CreatePost(props) {
   // const [title, setTitle] = useState("");
@@ -29,8 +29,8 @@ function CreatePost(props) {
       title: title.value,
       subTitle: subTitle.value,
       content: content.value,
-      createdAt: new Date()
-    })
+      createdAt: new Date(),
+    });
   }
 
   return (
@@ -50,7 +50,7 @@ function CreatePost(props) {
             value={subTitle}
             onChange={(e) => setSubTitle(e.target.value)}
           /> */}
-          <input {...subTitle}/>
+          <input {...subTitle} />
         </div>
 
         <div className="form-field">
