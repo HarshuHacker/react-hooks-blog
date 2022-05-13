@@ -3,6 +3,8 @@ import React from "react";
 import { db } from "../firebase";
 import { useFormInput } from "../hooks";
 
+import buttonStyle from "../assets/css/button.module.css";
+
 function CreatePost(props) {
   // const [title, setTitle] = useState("");
   // const [subTitle, setSubTitle] = useState("");
@@ -62,7 +64,7 @@ function CreatePost(props) {
           <textarea {...content} />
         </div>
 
-        <button className="create-post-btn">Create Post</button>
+        <button className={buttonStyle.createPostBtn}>Create Post</button>
       </form>
     </div>
   );
